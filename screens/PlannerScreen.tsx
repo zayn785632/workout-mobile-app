@@ -7,12 +7,14 @@ export default function PlannerScreen({navigation}: NativeStackHeaderProps) {
     
     useEffect(() =>{
         console.log("Rendering Planner Screen");
+        return () => console.log("Unmounting Planner Screen");
     }, [])
 
     return (
         <View>
             <Text>I am planner screen</Text>
-            <Button title="Go to Home"
+            <Button 
+            title="Go to Home"
             onPress={() => navigation.navigate("Home")}
             />
         </View>
