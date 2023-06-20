@@ -3,14 +3,22 @@
 import { View, Text, StyleSheet } from "react-native";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack/lib/typescript/src/types";
 
+type DetailParams = {
+    route: {
+        params: {
+            slug: string
+        }
+    }
+}
 
+type Navigation = NativeStackHeaderProps & DetailParams
 
-export default function WorkoutDetailScreen({navigation}: NativeStackHeaderProps) {
+export default function WorkoutDetailScreen({route}: Navigation) {
     
     return (
         
         <View style={styles.container}>
-            <Text style={styles.header}>Workout Detail!</Text>
+            <Text style={styles.header}>Slug - {route.params.slug}</Text>
 
         </View>
     )
