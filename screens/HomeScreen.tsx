@@ -1,6 +1,6 @@
 
 
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, Pressable } from "react-native";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack/lib/typescript/src/types";
 import data from "../data.json";
 import { Workout } from "../types/data";
@@ -13,9 +13,20 @@ export default function HomeScreen({navigation}: NativeStackHeaderProps) {
         
             <View style={styles.container}>
             <Text style={styles.header}>New Workouts</Text>
+           
             <FlatList
               data={data as Array<Workout>}
-              renderItem={WorkoutItem}
+              renderItem={({item}) => {
+                return (
+                    <Pressable
+                    onPress={() => navigation.navigate("WorkoutDetail")}
+                    >
+                    <WorkoutItem 
+                    item={item}
+                    />
+                    </Pressable>
+                )
+              }}
               keyExtractor={item => item.slug}
             />
             
@@ -32,5 +43,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: 20,
         fontWeight: "bold",
+        
     }
 })

@@ -4,13 +4,16 @@ import useCachedResources from './hooks/useCachedResources';
 
 export default function App() {
   const isLoaded = useCachedResources();
-  console.log(isLoaded);
-  return (
-    <>
-      <Navigation/>
-      <StatusBar style="auto" />
-    </>
-  );        
+  if (isLoaded){
+    return (
+      <>
+        <Navigation />
+        <StatusBar style="auto" />
+      </>
+    ); 
+  }else{
+    return null;
+  }      
 }
 
 
