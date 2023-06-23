@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     container: {
         borderRadius: 10,
         borderColor: "rgba(0,0,0 0.1)",
-        borderWidth: 0.5,
+        borderWidth: 0.2,
         padding: 10,
         marginBottom: 10,
         backgroundColor: "#fff"

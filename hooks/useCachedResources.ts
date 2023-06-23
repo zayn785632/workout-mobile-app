@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import * as Font from "expo-font";
 import { getData, storeData, containsKey } from "../storage";
 import data from "../data.json";
-import { initWorkouts } from "../storage/workout";
+import { clearWorkouts, initWorkouts } from "../storage/workout";
 
 export default function useCachedResources(){
     const [isLoadingComplete, setIsLoadingComplete] = useState(false);
