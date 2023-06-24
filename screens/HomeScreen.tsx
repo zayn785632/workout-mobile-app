@@ -5,7 +5,7 @@ import { NativeStackHeaderProps } from "@react-navigation/native-stack/lib/types
 
 import WorkoutItem from "../components/WorkoutItem";
 import { useWorkouts } from "../hooks/useWorkouts";
-
+import { ThemeText } from "../components/Text";
 
 export default function HomeScreen({navigation}: NativeStackHeaderProps) {
    const workouts = useWorkouts();
@@ -13,7 +13,7 @@ export default function HomeScreen({navigation}: NativeStackHeaderProps) {
     return (
         
             <View style={styles.container}>
-            <Text style={styles.header}>New Workouts</Text>
+            <ThemeText style={styles.header}>New Workouts</ThemeText>
            
             <FlatList
               data={workouts}

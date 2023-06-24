@@ -82,25 +82,27 @@ export default function WorkoutDetailScreen({route}: Navigation) {
                         />
                     }
                 >
-                    <View>
-                        { workout.sequence.map((si, idx) =>
-                            <View 
-                                key={si.slug}
-                                style={styles.sequenceItem}
-                            >
-                                <Text>
-                                    {si.name} | {si.type} | {formatSec(si.duration)}
-                            
-                            </Text>
-                            { idx !== workout.sequence.length - 1 &&
-                                    <FontAwesome
-                                        name="arrow-down"
-                                        size={20}
-                                    />
-                            }
-                            </View>
-                        )}
-                    </View>
+                    { () =>
+                         <View>
+                         { workout.sequence.map((si, idx) =>
+                             <View 
+                                 key={si.slug}
+                                 style={styles.sequenceItem}
+                             >
+                                 <Text>
+                                     {si.name} | {si.type} | {formatSec(si.duration)}
+                             
+                             </Text>
+                             { idx !== workout.sequence.length - 1 &&
+                                     <FontAwesome
+                                         name="arrow-down"
+                                         size={20}
+                                     />
+                             }
+                             </View>
+                         )}
+                     </View>
+                    }
             </Modal>
             </WorkoutItem>
             <View style={styles.wrapper}>
